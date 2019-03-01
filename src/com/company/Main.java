@@ -11,7 +11,8 @@ public class Main {
         int p3 = ht.put("cab");
         int p4 = ht.put("acb");
         int p5 = ht.put("cba");
-        int p6 = ht.put("aaa");
+        for(int i = 0; i<7; i++)
+        System.out.println(ht.put("aab"));
 
         int f1 = ht.find("abc");
         int f2 = ht.find("bca");

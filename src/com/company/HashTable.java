@@ -33,7 +33,7 @@ public class HashTable {
 
         while(slots[hash] != null){
             hash += step;
-            if(h - hash > step){
+            if(hash <= h && hash>h - step+1){
                 hash = -1;
                 break;
             }
@@ -42,7 +42,6 @@ public class HashTable {
                 hash = dif;
             }
         }
-
         return hash;
     }
 
