@@ -30,16 +30,21 @@ public class HashTable {
         // находит индекс пустого слота для значения, или -1
         int hash = hashFun(value);
         int h = hash;
-
+        int count = 0;
         while(slots[hash] != null){
             hash += step;
-            if(hash <= h && hash>h - step+1){
+            if(hash <= h && hash > h - step + 1){
                 hash = -1;
                 break;
             }
             if(hash >= slots.length){
                 int dif = hash - slots.length;
                 hash = dif;
+            }
+            count++;
+            if(count>1000){
+                hash = -1;
+                break;
             }
         }
         return hash;
@@ -62,6 +67,7 @@ public class HashTable {
     {
         int ind = hashFun(value);
         int h = ind;
+        int count = 0;
         while(slots[ind] != value){
             ind+=step;
             if(ind >= slots.length){
@@ -69,6 +75,11 @@ public class HashTable {
                 ind = dif;
             }
             if(Math.abs(h - ind) < step){
+                ind = -1;
+                break;
+            }
+            count++;
+            if(count>1000){
                 ind = -1;
                 break;
             }
