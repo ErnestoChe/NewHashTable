@@ -32,7 +32,11 @@ public class HashTable {
         int h = hash;
         while(slots[hash] != null){
             hash += step;
-            if(hash <= h && hash > h - step + 1){
+            /*if(hash <= h && hash > h - step + 1){
+                hash = -1;
+                break;
+            }*/
+            if(Math.abs(hash - h)<step){
                 hash = -1;
                 break;
             }
