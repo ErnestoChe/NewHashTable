@@ -23,14 +23,14 @@ public class Main {
         int f5 = ht.find("cba");
 
         int f6 = ht.find("aab");*/
-        //System.out.println(f1+" "+f2+" "+f3+" "+f4+" "+f5);
-        //System.out.println(f6);
-        //System.out.println(ht.find("cab"));
 
         HashTable ht1 = new HashTable(19, 3);
-        for(int i = 0; i < 20; i++){
-            System.out.println("c записалось в "+ht1.put("c"));
+        int n;
+        for(n = 1; n <= 98; n++) {
+            String s2 = String.valueOf(n);
+            int slot = ht1.put(s2);
+            System.out.println(n+" "+slot);
         }
-        //System.out.println(ht1.put("c"));
+        System.out.println("test" + ht1.put(String.valueOf(n)));
     }
 }

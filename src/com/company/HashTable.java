@@ -36,13 +36,13 @@ public class HashTable {
                 hash = -1;
                 break;
             }*/
-            if(Math.abs(hash - h)<step){
-                hash = -1;
-                break;
-            }
             if(hash >= slots.length){
                 int dif = hash - slots.length;
                 hash = dif;
+            }
+            if(Math.abs(hash - h)<step){
+                hash = -1;
+                break;
             }
         }
         return hash;
