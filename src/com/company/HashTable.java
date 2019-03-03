@@ -76,7 +76,7 @@ public class HashTable {
                 }
                 if(Math.abs(h - ind) < step){
                     ind = -1;
-                    break;
+                    return ind;
                 }
             }
         }
