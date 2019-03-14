@@ -24,7 +24,7 @@ public class Main {
 
         int f6 = ht.find("aab");*/
 
-        HashTable ht1 = new HashTable(19, 3);
+        HashTable ht1 = new HashTable(19, 3, 123);
         int n;
         for(n = 1; n <= 98; n++) {
             String s2 = String.valueOf(n);
@@ -38,5 +38,10 @@ public class Main {
             System.out.println(n+" "+slot);
         }
         System.out.println(ht1.find("im still right here"));
+
+        for(int i = 0; i< 17; i++){
+            System.out.println("number is "+i);
+            System.out.println(i % 17 + " " + Math.pow(i, 4) % 17+ " "+Math.pow(i, 5) % 17);
+        }
     }
 }
