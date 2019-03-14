@@ -6,15 +6,16 @@ public class HashTable {
     public String [] slots;
     public int choose_fun;
 
-    public HashTable(int sz, int stp, int choose_fun)
+    public HashTable(int sz, int stp, int ch_fun)
     {
         size = sz;
         step = stp;
         slots = new String[size];
+        choose_fun = ch_fun;
         for(int i=0; i<size; i++) slots[i] = null;
     }
 
-    public int hashFun(String value, int choose)
+    public int hashFun(String value, int choose_fun)
     {
         // всегда возвращает корректный индекс слота
         char[] n = value.toCharArray();
@@ -23,7 +24,7 @@ public class HashTable {
             v += (int)n[i];
         }
         int hash = 0;
-        switch(choose){
+        switch(choose_fun){
             case(1):
                 hash = ((v * 9 + 16) % 29) % size;
             case(2):

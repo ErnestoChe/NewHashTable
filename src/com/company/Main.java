@@ -24,12 +24,12 @@ public class Main {
 
         int f6 = ht.find("aab");*/
 
-        HashTable ht1 = new HashTable(19, 3, 123);
+        HashTable ht1 = new HashTable(19, 3, 2);
         int n;
         for(n = 1; n <= 98; n++) {
             String s2 = String.valueOf(n);
             int slot = ht1.put(s2);
-            //System.out.println(n+" "+slot);
+            System.out.println(n+" "+slot);
         }
         System.out.println("test" + ht1.put(String.valueOf(n)));
         for(n = 1; n <= 100; n++) {
